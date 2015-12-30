@@ -201,7 +201,7 @@ public class GUIWindow {
 		btnAdd.setBounds(190, 220, 41, 23);
 		frmMcsubmitBot.getContentPane().add(btnAdd);
 		
-		lblSubmitterinchat = new JLabel("Oops! Installation instructions in the readme!");
+		lblSubmitterinchat = new JLabel("Oops! Not set up! take a look at Install Instructions");
 		lblSubmitterinchat.setFont(new Font("Dialog", Font.BOLD, 10));
 		lblSubmitterinchat.setBounds(8, 103, 279, 14);
 		frmMcsubmitBot.getContentPane().add(lblSubmitterinchat);
@@ -222,7 +222,7 @@ public class GUIWindow {
 		chckbxExportToComplete.setBounds(8, 153, 221, 22);
 		frmMcsubmitBot.getContentPane().add(chckbxExportToComplete);
 		
-		JLabel lblPublicRelease = new JLabel("v1.2.0");
+		JLabel lblPublicRelease = new JLabel("v1.2.1");
 		lblPublicRelease.setFont(new Font("Dialog", Font.BOLD, 8));
 		lblPublicRelease.setBounds(0, 241, 89, 10);
 		frmMcsubmitBot.getContentPane().add(lblPublicRelease);

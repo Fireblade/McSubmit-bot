@@ -28,66 +28,9 @@ public class ConfUtils
         {
             load();
         }
-//        else
-//        {
-//            create();
-//            init();
-//        }
     }
 
 
-    public static void create()
-    {
-    	
-//    	URL inputUrl = Main.class.getResource("res/config.cfg");
-//    	File dest = new File("data/config.cfg");
-//    	try {
-//			org.apache.commons.io.FileUtils.copyURLToFile(inputUrl, dest);
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-//    	
-        Properties p = new Properties();
-        OutputStream o = null;
-        try
-        {
-            o = new FileOutputStream("data/config.cfg");
-
-            // Set each variable
-            p.setProperty("g_debug", "false");
-            p.setProperty("g_bot_reqMembership", "true");
-            p.setProperty("g_bot_reqCommands", "true");
-            p.setProperty("g_bot_reqTags", "false");
-            p.setProperty("g_bot_name", "TwitchAI");
-            p.setProperty("g_bot_oauth", "youroauth");
-            p.setProperty("g_bot_chan", "#IllusionAI");
-            //Super Mario Maker config
-            p.setProperty("g_smm_submits_open", "true");
-            p.setProperty("g_smm_message_all", "true");
-            p.setProperty("g_smm_remove_after_nextrandom", "true");
-            p.setProperty("g_smm_allow_previously_done_levels", "true");
-            p.setProperty("g_smm_record_levels_played", "true");
-            p.setProperty("g_smm_record_previous_levels_played", "true");
-            p.setProperty("g_smm_follow_required", "true");
-            p.setProperty("g_smm_submit_delay", "5");
-            p.setProperty("g_smm_submit_max_in_list", "2");
-            p.setProperty("g_smm_max_queue", "100");
-            
-            //p.setProperty("g_smm_", "");
-
-            // Store the variables
-            p.store(o, null);
-
-            // Close the outputstream object
-            o.close();
-
-            logMsg("config.cfg" + " Created succesfully!");
-        } catch (IOException e)
-        {
-            logErr("Couldn't create the main configuration file, closing program...");
-            exit(1);
-        }
-    }
 
     public static void load()
     {
