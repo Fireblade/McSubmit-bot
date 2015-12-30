@@ -4,6 +4,7 @@ Config options will only be applied on restart of application.
 Queue lists do not save as of now.
 
 Video installation help: https://youtu.be/9a2EMDl4zEs (v1.1.0)
+Open source! Available at https://github.com/Fireblade/McSubmit-bot
 
 //////////////////////////////
 First time setup requirements.
