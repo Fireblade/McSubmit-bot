@@ -1,0 +1,98 @@
+How to install and/or get running.
+
+Config options will only be applied on restart of application.
+Queue lists do not save as of now.
+
+Video installation help: https://youtu.be/9a2EMDl4zEs (v1.1.0)
+
+//////////////////////////////
+First time setup requirements.
+
+1: Create a new twitch account with a name that you want your bot to have. (or you can use your own account, i don't recommend)
+2: go to https://twitchapps.com/tmi/ and get a oauth code for your bot. (Don't share this with anyone else!)
+3: Run the bot once to generate your config.cfg file, 
+4: Set the g_bot_name to the name of your bot. Preffered all lower case.
+5: Set the g_bot_chan to the channel name that you wish your bot to work under. Include a hashtag infront. (#)
+6: set the g_bot_oauth to the code password that you got in step 2. (Don't share oauth!!)
+7: in the channels.txt file, change line 1 to be the same channel as in step 5. Do not put a hashtag infront. (#)
+8: Ready to go, start bot and see if !submit works.
+
+9: If you want to use the chat commands of !next and !random, Add yourself as a moderator in the moderators.txt file. 
+(required if you do not use the GUI)
+
+
+Optional:
+Set response's in the responses.cfg file
+Set other config options as necesary. 
+Set your bot as a mod. (so he does't get timed out from your other bots! 100% optional though!)
+
+
+/////////////////////////////
+Google spreadsheets and forms.
+1: Create a new spreadsheet. (google sheet)
+2: Insert new form
+3: In the form add a field for a level field, and author (submitter)
+4: optional - create a new sheet with level,author,time,deaths. (completed levels list)
+5: go back to the sheet results, at the bottom left click your form sheets (should be named form responses)
+6: new tab called form, go to live form.
+7: Save that url at the end of g_forms_url= and g_forms_completed_url=. Replace the /viewform with /viewResponse
+7b: example>> g_forms_completed_url=https://docs.google.com/forms/d/xyzrandomletters/formResponse
+8: right-click the text field for each element you created, and click inspect (or inspect element)
+9: for each element created you will find something related to "entry_########", Save that in the config file.
+9b: examples: g_forms_completed_submit_entry=entry_150396879, g_forms_completed_level_entry=entry_200666383
+10: turn the forms_use=true to enable.
+
+if you don't want a death, or a timer, or both added to the completion spreadsheet, I have not tested this but...
+i think if you leave the timer/death field empty, and have it on your form as "optional" then it will leave it blank/skip.
+
+This link may help you figure out how to get your entry codes. 
+https://github.com/goktugyil/QorumLogs/blob/master/Log%20To%20GoogleDocs.md
+
+
+////////////////////////////////
+Message response list parameters.
+
+{sender} -- user who sent the message. 
+{place} -- Gets the position of the senders next level.
+{queue_size} -- gets the ammount of levels in the queue list.
+{current} -- gets the current level code.
+{currentauthor} -- gets the current levels author.
+{previous} / {previousauthor} previous level code/author.
+{delay} -- is the custom delay in minutes set in the config.cfg.
+{max_queue_size} -- maximum allowed levels in a queue.
+{max_user_submit} -- maximum allowed levels a user may have in the queue at any given time.
+{next_levels} -- shows the next 3 levels with the syntax provided from ml_queuelist_syntax;
+{next_level1-3} / {next_level_user1-3} -- syntax for {next_levels} shows the next 1,2,3 levels only after {next_levels}. or the author/submitter
+{submission_list} -- the configured URL of your submission list google spreadsheet
+{completed_list} -- the configured URL of your completed list google spreadsheet
+{streamer_list_url} -- the configured URL of your nintendo bookmark profile. Example: https://supermariomakerbookmark.nintendo.net/profile/MirthlessSmile
+{title} -- title of the current level
+{difficulty} -- difficulty of the current level
+
+
+
+////////////////////////////////
+Public commands are as listed:
+
+!submit --used to submit a level.. its... why you are reading this
+!current -- shows current level id and info, used by configurable response
+!previous -- shows previous level id and info, used by configurable response
+!queue -- short response info by configurable reponse
+!title -- shows the title of the current level
+!delete -- user may delete their levels from the queue. Can be turned on/off
+!queuelist -- configurable response for the next 3 levels
+!list -- URL to your sheet if you are using it. configurable response
+!completed -- URL to your completed sheet if you are using it. configurable response
+!mylist -- the streamers list of levels, Configured URL - {streamer_list_url}
+
+////////////////////////////////
+Bot moderator commands:
+
+!next --next level in line
+!random --random level in the queue
+!open --opens the queue to new submissions
+!close --closes the queue to new submissions
+
+
+
+
