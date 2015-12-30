@@ -85,7 +85,7 @@ public class Globals
 	public static String g_gui_ended_time;
 	
 	//SMM Commands
-	public static final String g_com_submit = "submit";
+	public static final String g_com_submit = "request";
 	public static final String g_com_queue = "queue";
 	public static final String g_com_current = "current";
 	public static final String g_com_previous = "previous";
