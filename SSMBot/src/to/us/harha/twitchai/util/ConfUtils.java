@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Properties;
+import java.util.Set;
 
 import to.us.harha.twitchai.Main;
 
@@ -100,7 +101,7 @@ public class ConfUtils
             p.load(i);
             
             String line;
-            boolean bool;
+            Set<String> plist = p.stringPropertyNames();
             // Get the properties and set the config variables
             g_debug = Boolean.valueOf(p.getProperty("g_debug"));
             g_bot_reqMembership = Boolean.valueOf(p.getProperty("g_bot_reqMembership"));
@@ -125,11 +126,11 @@ public class ConfUtils
     		g_smm_play_beep_sound_on_first_level = Boolean.valueOf(p.getProperty("g_smm_play_beep_sound_on_first_level")); 
     		//v1.2.0 additions of SMM
     		
-    		if(((bool = Boolean.valueOf(p.getProperty("g_smm_allow_duplicate_submissions")) == null))) g_smm_allow_duplicate_submissions = bool; else 
-            	FileUtils.writeToTextFile("data/", "config.cfg", "g_smm_allow_duplicate_submissions=" + g_smm_allow_duplicate_submissions);
-    		if(((bool = Boolean.valueOf(p.getProperty("g_smm_allow_command_delete")) == null))) g_smm_allow_command_delete = bool; else 
-            	FileUtils.writeToTextFile("data/", "config.cfg", "g_smm_allow_command_delete=" + g_smm_allow_command_delete);
-    		
+    		if(plist.contains("g_smm_allow_duplicate_submissions")) g_smm_allow_duplicate_submissions = Boolean.valueOf(p.getProperty("g_smm_allow_duplicate_submissions"));
+    			else FileUtils.writeToTextFile("data/", "config.cfg", "g_smm_allow_duplicate_submissions=" + g_smm_allow_duplicate_submissions);
+    		if(plist.contains("g_smm_allow_command_delete")) g_smm_allow_command_delete = Boolean.valueOf(p.getProperty("g_smm_allow_command_delete"));
+				else FileUtils.writeToTextFile("data/", "config.cfg", "g_smm_allow_command_delete=" + g_smm_allow_command_delete);
+
     		if(!((line = String.valueOf(p.getProperty("g_smm_url_list"))).equals("null"))) g_smm_url_list = line; else 
             	FileUtils.writeToTextFile("data/", "config.cfg", "g_smm_url_list=" + g_smm_url_list);
     		if(!((line = String.valueOf(p.getProperty("g_smm_url_list_streamer"))).equals("null"))) g_smm_url_list_streamer = line; else 
