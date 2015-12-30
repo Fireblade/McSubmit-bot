@@ -30,8 +30,6 @@ public class ConfUtils
         }
     }
 
-
-
     public static void load()
     {
         Properties p = new Properties();
