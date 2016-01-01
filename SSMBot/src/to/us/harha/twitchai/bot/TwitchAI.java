@@ -428,38 +428,38 @@ public class TwitchAI extends PircBot
 	             * Normal commands
 	             */
 	            case g_com_submit:
-	            	if(!g_smm_submits_open)
+	            	if(!g_smm_submits_open) //Submissions can be turned on/off
 	            	{
 	            		sendResponse(sender, ml_submit_open);
 	            		break;
 	            	}
-	            	if (msg_array.length < 2)
+	            	if (msg_array.length < 2) //if !submit without a code
                     {
 	            		sendResponse(sender, ml_submit_with_no_level);
 	            		break;
                     }
-	            	if(SMMHandler.getLevelCount()>=g_smm_max_queue){
+	            	if(SMMHandler.getLevelCount()>=g_smm_max_queue){ //max size of queue, default 100
 	            		sendResponse(sender, ml_submit_max_queue);
 	            		break;
 	            	}
-	            	if(SMMHandler.getUserLevelCount(sender)>=g_smm_submit_max_in_list){
-	            		sendResponse(sender, ml_submit_max_in_list);
+	            	if(SMMHandler.getUserLevelCount(sender)>=g_smm_submit_max_in_list){ //max submissions a user may have in a queue
+	            		sendResponse(sender, ml_submit_max_in_list); //defualt 2
 	            		break;
 	            	}
-	            	if(twitch_user != null || g_smm_submit_delay>0)
-	            	{
+	            	if(twitch_user != null && g_smm_submit_delay>0)
+	            	{//how fast users may send submissions in minutes, default 5.
 		            	if((new Date().getTime() <= twitch_user.getLastSubmit() + (g_smm_submit_delay * 100000)) && twitch_user.getLastSubmit() != 0)
 		            	{
 		            		sendResponse(sender, ml_submit_delay);
 		            		break;
 		            	}
-	            	}
+	            	}//require user to follow channel to submit, default off
 	            	if(g_smm_follow_required){
 	            		if(!isUserFollowing(sender, g_bot_chan)){
 	            			sendResponse(sender, ml_require_follow);
 		            		break;
 	            		}
-	            	}
+	            	}//period fix
 	            	if(msg_array[1].charAt(msg_array[1].length()-1) == '.')
 	            		msg_array[1] = msg_array[1].substring(0, msg_array[1].length()-1);
 	            	
