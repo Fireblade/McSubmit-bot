@@ -47,7 +47,7 @@ public class SMMHandler {
 			LevelCode cur_lvl = levels.get(i);
 			if(cur_lvl.getAuthor().equals(sender))
 			{
-				return count++;
+				count++;
 			}
 		}
 		return count;

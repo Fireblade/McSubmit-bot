@@ -12,6 +12,10 @@ import to.us.harha.twitchai.bot.TwitchUser;
 
 public class Globals
 {
+    public static String           g_version        = "1.2.2"; //Version of submission bot
+    public static int              g_build          = 2;       //general numeric guide
+	
+	
 	//Super Mario Maker submit handler
 	public static boolean g_smm_submits_open = true;
 	public static boolean g_smm_message_all = true;

@@ -153,6 +153,8 @@ public class GUIWindow {
 				g_gui_timing = false;
 				txtDeaths.setText("0");
 				g_gui_ended_time = "00:00:00";
+				writeTextFile("data/files/", "current_level_deaths.txt", "0");
+				writeTextFile("data/files/", "current_level_time.txt", "00:00:00");
 			}
 		});
 		btnNext.setBounds(43, 78, 89, 24);
@@ -172,6 +174,8 @@ public class GUIWindow {
 				g_gui_timing = false;
 				txtDeaths.setText("0");
 				g_gui_ended_time = "00:00:00";
+				writeTextFile("data/files/", "current_level_deaths.txt", "0");
+				writeTextFile("data/files/", "current_level_time.txt", "00:00:00");
 			}
 		});
 		btnRandom.setBounds(155, 78, 89, 24);
@@ -222,7 +226,7 @@ public class GUIWindow {
 		chckbxExportToComplete.setBounds(8, 153, 221, 22);
 		frmMcsubmitBot.getContentPane().add(chckbxExportToComplete);
 		
-		JLabel lblPublicRelease = new JLabel("v1.2.1");
+		JLabel lblPublicRelease = new JLabel("v" + g_version);
 		lblPublicRelease.setFont(new Font("Dialog", Font.BOLD, 8));
 		lblPublicRelease.setBounds(0, 241, 89, 10);
 		frmMcsubmitBot.getContentPane().add(lblPublicRelease);
