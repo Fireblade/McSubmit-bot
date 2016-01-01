@@ -438,7 +438,7 @@ public class TwitchAI extends PircBot
 	            		sendResponse(sender, ml_submit_with_no_level);
 	            		break;
                     }
-	            	if(SMMHandler.getUserLevelCount(sender)>=g_smm_max_queue){
+	            	if(SMMHandler.getLevelCount()>=g_smm_max_queue){
 	            		sendResponse(sender, ml_submit_max_queue);
 	            		break;
 	            	}
