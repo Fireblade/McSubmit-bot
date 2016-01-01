@@ -88,14 +88,15 @@ public class GUIWindow {
 		txtLevelCode = new JTextField();
 		txtLevelCode.setEditable(false);
 		txtLevelCode.setHorizontalAlignment(SwingConstants.CENTER);
-		txtLevelCode.setText("202F-0000-0117-DE6D");
+		txtLevelCode.setText("xxxx-xxxx-xxxx-xxxx");
 		txtLevelCode.setBounds(8, 56, 137, 20);
 		frmMcsubmitBot.getContentPane().add(txtLevelCode);
 		txtLevelCode.setColumns(10);
 		
 		txtLevelSubmitter = new JTextField();
+		txtLevelSubmitter.setHorizontalAlignment(SwingConstants.CENTER);
 		txtLevelSubmitter.setEditable(false);
-		txtLevelSubmitter.setText("MirthlessSmile");
+		txtLevelSubmitter.setText("Username");
 		txtLevelSubmitter.setBounds(145, 56, 128, 20);
 		frmMcsubmitBot.getContentPane().add(txtLevelSubmitter);
 		txtLevelSubmitter.setColumns(10);
