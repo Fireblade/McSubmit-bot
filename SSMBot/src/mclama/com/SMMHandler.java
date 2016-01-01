@@ -271,15 +271,30 @@ public class SMMHandler {
 			str = str.replace("{next_level1}", levels.get(0).getLevel());
 			str = str.replace("{next_level_user1}", levels.get(0).getAuthor());
 		}
+		else
+		{
+			str = str.replace("{next_level1}", "Empty!");
+			str = str.replace("{next_level_user1}", "none");
+		}
 		if(levels.size()>1)
 		{
 			str = str.replace("{next_level2}", levels.get(1).getLevel());
 			str = str.replace("{next_level_user2}", levels.get(1).getAuthor());
 		}
+		else
+		{
+			str = str.replace("{next_level2}", "none");
+			str = str.replace("{next_level_user2}", "none");
+		}
 		if(levels.size()>2)
 		{
 			str = str.replace("{next_level3}", levels.get(2).getLevel());
 			str = str.replace("{next_level_user3}", levels.get(2).getAuthor());
+		}
+		else
+		{
+			str = str.replace("{next_level3}", "none");
+			str = str.replace("{next_level_user3}", "none");
 		}
 		return str;
 	}
