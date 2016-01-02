@@ -18,12 +18,19 @@ public class LevelCode {
 		if(!level.equals("none"))
 		{
 			try {
-				String[] split = response.split("<div class=" + '"' + "clear-rate");
-				String[] xsplit = split[0].split("</path></svg></div></div>");
-				this.difficulty = xsplit[xsplit.length-1];
 				
-				split = response.split("<div class=" + '"' + "course-title" + '"' + ">");
-				xsplit = split[1].split("</div></div>");
+				if (response.contains("Super Expert")) {
+					difficulty = "Super Expert";
+				} else if (response.contains("Expert")) {
+					difficulty = "Expert";
+				} else if (response.contains("Normal")) {
+					difficulty = "Normal";
+				} else if (response.contains("Easy")) {
+					difficulty = "Easy";
+				} else difficulty = "unknown";
+				
+				String[] split = response.split("<div class=" + '"' + "course-title" + '"' + ">");
+				String[] xsplit = split[1].split("</div></div>");
 				this.name = xsplit[0];
 			} catch (Exception e) {
 				logErr("Failed to get level name and difficulty.");

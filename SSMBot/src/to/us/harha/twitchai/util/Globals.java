@@ -12,8 +12,8 @@ import to.us.harha.twitchai.bot.TwitchUser;
 
 public class Globals
 {
-    public static String           g_version        = "1.2.2"; //Version of submission bot
-    public static int              g_build          = 2;       //general numeric guide
+    public static String           g_version        = "1.2.3"; //Version of submission bot
+    public static int              g_build          = 3;       //general numeric guide
 	
 	
 	//Super Mario Maker submit handler
