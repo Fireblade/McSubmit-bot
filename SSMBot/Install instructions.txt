@@ -36,7 +36,7 @@ Google spreadsheets and forms.
 4: optional - create a new sheet with level,author,time,deaths. (completed levels list)
 5: go back to the sheet results, at the bottom left click your form sheets (should be named form responses)
 6: new tab called form, go to live form.
-7: Save that url at the end of g_forms_url= and g_forms_completed_url=. Replace the /viewform with /viewResponse
+7: Save that url at the end of g_forms_url= and g_forms_completed_url=. Replace the /viewform with /formResponse
 7b: example>> g_forms_completed_url=https://docs.google.com/forms/d/xyzrandomletters/formResponse
 8: right-click the text field for each element you created, and click inspect (or inspect element)
 9: for each element created you will find something related to "entry_########", Save that in the config file.
