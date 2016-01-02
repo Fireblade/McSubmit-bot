@@ -210,11 +210,11 @@ public class SMMHandler {
 		return false;
 	}
 
-	public static boolean removeLevelFromQueue(String code){
+	public static boolean removeLevelFromQueue(String code, String sender){
 		for(int i=0; i<levels.size(); i++)
 		{
 			LevelCode cur_lvl = levels.get(i);
-			if(cur_lvl.getLevel().equals(code))
+			if(cur_lvl.getLevel().equals(code) && cur_lvl.getAuthor().equals(sender))
 			{
 				levels.remove(i);
 				g_gui.updateViewLevels();

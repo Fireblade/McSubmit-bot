@@ -604,7 +604,7 @@ public class TwitchAI extends PircBot
 			            		break;
 		            		}
 		            	}
-		            	if(SMMHandler.removeLevelFromQueue(msg_array[1]))
+		            	if(SMMHandler.removeLevelFromQueue(msg_array[1], sender))
 		            	{
 		            		sendResponse(sender, ml_delete);
 		            		break;
