@@ -290,11 +290,14 @@ public class GUIWindow {
 		ArrayList<LevelCode> levels = SMMHandler.getLevels();
 		DefaultTableModel model = (DefaultTableModel) gui_queue_list.getTable().getModel();
 		
+		model.setRowCount(0);
+		
 		for(int i=0; i<levels.size(); i++)
 		{
 			LevelCode cur_lvl = levels.get(i);
 			model.addRow(new Object[]{cur_lvl.getLevel(), cur_lvl.getAuthor()});
 		}
+		gui_queue_list.getTable().setModel(model);
 	}
 
 	public void endTimer() {
@@ -392,6 +395,7 @@ public class GUIWindow {
 		FileUtils.writeTextFile("data/files/", "current_level_difficulty", current_level.getDifficulty());
 		
 		g_gui_ended_time = "00:00:00";
+		updateViewLevels();
 	}
 
 	public boolean getChckbxExportToComplete() {
