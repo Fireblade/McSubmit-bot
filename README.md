@@ -1,6 +1,7 @@
 # McSubmit-bot
 McSubmit bot is a twitch bot that only does one thing. Handle Submissions for streamers that do viewer levels for the Wii U game, Super mario maker.  
-McSubmit bot uses TwitchAI by harha as a base for the twitch bot foundation and can be found at https://github.com/Harha/TwitchAI
+McSubmit bot uses TwitchAI by harha as a base for the twitch bot foundation and can be found at https://github.com/Harha/TwitchAI  
+Latest download found here: https://github.com/Fireblade/McSubmit-bot/releases/latest
 
 # Features
 * !submit allows viewers to submit their own levels to be played by the streamer.
