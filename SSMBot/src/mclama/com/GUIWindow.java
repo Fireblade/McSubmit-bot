@@ -156,6 +156,7 @@ public class GUIWindow {
 				g_gui_ended_time = "00:00:00";
 				writeTextFile("data/files/", "current_level_deaths.txt", "0");
 				writeTextFile("data/files/", "current_level_time.txt", "00:00:00");
+				updateViewLevels();
 			}
 		});
 		btnNext.setBounds(43, 78, 89, 24);
@@ -177,6 +178,7 @@ public class GUIWindow {
 				g_gui_ended_time = "00:00:00";
 				writeTextFile("data/files/", "current_level_deaths.txt", "0");
 				writeTextFile("data/files/", "current_level_time.txt", "00:00:00");
+				updateViewLevels();
 			}
 		});
 		btnRandom.setBounds(155, 78, 89, 24);
