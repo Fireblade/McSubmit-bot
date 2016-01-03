@@ -27,7 +27,7 @@ public class LevelCode {
 					difficulty = "Normal";
 				} else if (response.contains("Easy")) {
 					difficulty = "Easy";
-				} else difficulty = "unknown";
+				} else difficulty = "0 clears";
 				
 				String[] split = response.split("<div class=" + '"' + "course-title" + '"' + ">");
 				String[] xsplit = split[1].split("</div></div>");

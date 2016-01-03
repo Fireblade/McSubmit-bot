@@ -283,7 +283,7 @@ public class SMMHandler {
 		}
 		else
 		{
-			str = str.replace("{next_level2}", "none");
+			str = str.replace("{next_level2}", "Empty!");
 			str = str.replace("{next_level_user2}", "none");
 		}
 		if(levels.size()>2)
@@ -293,7 +293,7 @@ public class SMMHandler {
 		}
 		else
 		{
-			str = str.replace("{next_level3}", "none");
+			str = str.replace("{next_level3}", "Empty!");
 			str = str.replace("{next_level_user3}", "none");
 		}
 		return str;
