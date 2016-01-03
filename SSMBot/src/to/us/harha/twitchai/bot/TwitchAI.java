@@ -65,8 +65,12 @@ public class TwitchAI extends PircBot
         ArrayList<String> loadedModerators = FileUtils.readTextFile("data/moderators.txt");
         for (String m : loadedModerators)
         {
-            String[] m_split = m.split(" ");
-            TwitchUser newmod = new TwitchUser(m_split[0], m_split[1]);
+        	TwitchUser newmod;
+        	if(m.contains(" ")){
+        		String[] m_split = m.split(" ");
+	            newmod = new TwitchUser(m_split[0], m_split[1]);
+        	}else
+        		newmod = new TwitchUser(m, "&");
             logMsg("Added a TwitchAI moderator (" + newmod + ") to m_moderators");
             m_moderators.add(newmod);
         }
