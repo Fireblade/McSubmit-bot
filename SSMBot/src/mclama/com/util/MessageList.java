@@ -32,47 +32,6 @@ public class MessageList {
         {
             load();
         }
-//        else
-//        {
-//            create();
-//            init();
-//        }
-    }
-
-    public static void create()
-    {
-        Properties p = new Properties();
-        OutputStream o = null;
-        try
-        {
-            o = new FileOutputStream("data/responses.cfg");
-
-            // Set each variable
-            p.setProperty("ml_submit_with_no_level", "To add your level to the list, use !submit code.");
-            p.setProperty("ml_submit", "Thanks {sender}, your level will be in position {place} on the queue!");
-            p.setProperty("ml_current", "Current level code: {current} by {currentauthor}.");
-            p.setProperty("ml_previous", "Last level code: {previous} by {previousauthor}.");
-            p.setProperty("ml_submit_open", "Sorry, Level submission is currently closed.");
-            p.setProperty("ml_submit_delay", "There is a {delay} minute delay between submissions. Please wait a little longer {sender}.");
-            p.setProperty("ml_on_next", "Next level is {current} by {currentauthor}. {queue_size} remaining in queue.");
-            p.setProperty("ml_on_random", "Random level is {current} by {currentauthor}. {queue_size} remaining in queue.");
-            p.setProperty("ml_queue", "The current queue has {queue_size} levels! Your next level is in position {place}.");
-            p.setProperty("ml_no_queue", "No maps in the queue! Maybe someone would like to !submit code?");
-            // p.setProperty("ml_l", "");
-        	
-
-            // Store the variables
-            p.store(o, null);
-
-            // Close the outputstream object
-            o.close();
-
-            logMsg("responses.cfg" + " Created succesfully!");
-        } catch (IOException e)
-        {
-            logErr("Couldn't create the main configuration file, closing program...");
-            exit(1);
-        }
     }
 
     public static void load()

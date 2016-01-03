@@ -152,18 +152,18 @@ public class FileUtils
 
         return result;
     }
-
-	public static boolean addNewReceiver(String directory, String fileName, String line) {
-		
-		ArrayList<String> lines = readTextFile(directory + fileName);
-
-        for(int i=0; i<lines.size(); i++){
-        	if(lines.get(i).equals(line)){
-        		return false;
-        	}
-        }
-		
-		writeToTextFile(directory, fileName, line);
-		return true;
-	}
+//
+//	public static boolean addNewReceiver(String directory, String fileName, String line) {
+//		
+//		ArrayList<String> lines = readTextFile(directory + fileName);
+//
+//        for(int i=0; i<lines.size(); i++){
+//        	if(lines.get(i).equals(line)){
+//        		return false;
+//        	}
+//        }
+//		
+//		writeToTextFile(directory, fileName, line);
+//		return true;
+//	}
 }

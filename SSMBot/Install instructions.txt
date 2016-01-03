@@ -7,7 +7,7 @@ Video installation help: https://youtu.be/9a2EMDl4zEs (v1.1.0)
 Open source! Available at https://github.com/Fireblade/McSubmit-bot
 
 //////////////////////////////
-First time setup requirements.
+First time setup requirements. (https://github.com/Fireblade/McSubmit-bot/wiki/Configuration---Basic)
 
 1: Create a new twitch account with a name that you want your bot to have. (or you can use your own account, i don't recommend)
 2: go to https://twitchapps.com/tmi/ and get a oauth code for your bot. (Don't share this with anyone else!)
