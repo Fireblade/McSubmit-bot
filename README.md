@@ -13,9 +13,10 @@ Latest download found here: https://github.com/Fireblade/McSubmit-bot/releases/l
 
 
 # Install
-To get the basic bot running, this video will help you. https://youtu.be/-68RLekviJ4  
-For a quick attempt at teaching you how to get both the bot and spreadsheets working: https://youtu.be/9a2EMDl4zEs (v1.1.0)
-
+A fast video that covers as much as possible in 7 minutes.. https://youtu.be/9a2EMDl4zEs (v1.1.0)  
+To get the basic bot running, we have [this page](https://github.com/Fireblade/McSubmit-bot/wiki/Configuration---Basic) or [this 13 minute video](https://youtu.be/-68RLekviJ4).  
+Working on sheets page :)  
+For general information about the config file, we have [this page](https://github.com/Fireblade/McSubmit-bot/wiki/Config.cfg-information).    
 ## Commands
 
 **Public commands**, available to anyone to use  
