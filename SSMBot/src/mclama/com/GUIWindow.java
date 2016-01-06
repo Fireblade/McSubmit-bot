@@ -391,8 +391,8 @@ public class GUIWindow {
 		lblLevelName.setText("Title: " + current_level.getName());
 		lblLevelDifficulty.setText("Level Difficulty: " + current_level.getDifficulty());
 		
-		FileUtils.writeTextFile("data/files/", "current_level_title", current_level.getName());
-		FileUtils.writeTextFile("data/files/", "current_level_difficulty", current_level.getDifficulty());
+		FileUtils.writeTextFile("data/files/", "current_level_title.txt", current_level.getName());
+		FileUtils.writeTextFile("data/files/", "current_level_difficulty.txt", current_level.getDifficulty());
 		
 		g_gui_ended_time = "00:00:00";
 		updateViewLevels();
