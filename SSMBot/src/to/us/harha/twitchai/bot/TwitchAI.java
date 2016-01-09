@@ -415,7 +415,7 @@ public class TwitchAI extends PircBot
             
             message = message.replace("!", "");
             String[] msg_array = message.split(" ");
-            String msg_command = msg_array[0];
+            String msg_command = msg_array[0].toLowerCase();
             String user_sender = sender;
             String user_target;
             String chan_sender = channel;
@@ -441,7 +441,8 @@ public class TwitchAI extends PircBot
                     {
 	            		sendResponse(sender, ml_submit_with_no_level);
 	            		break;
-                    }
+                    } 
+	            	else msg_array[1] = msg_array[1].toUpperCase();
 	            	if(SMMHandler.getLevelCount()>=g_smm_max_queue){ //max size of queue, default 100
 	            		sendResponse(sender, ml_submit_max_queue);
 	            		break;
@@ -638,6 +639,38 @@ public class TwitchAI extends PircBot
 		            	sendResponse(sender, ml_current_title);
 	            		break;
 		            }
+	            case g_com_forceadd:
+	            	if (msg_array.length < 2) //if !submit without a code
+                    {
+	            		sendResponse(sender, ml_forceadd_with_no_level);
+	            		break;
+                    } 
+	            	else msg_array[1] = msg_array[1].toUpperCase();
+	            	
+	            	if(msg_array[1].charAt(msg_array[1].length()-1) == '.')
+	            		msg_array[1] = msg_array[1].substring(0, msg_array[1].length()-1);
+	            	
+	            	response = sendGetRequest("https://supermariomakerbookmark.nintendo.net/courses/" + msg_array[1]);
+            		//System.out.println("response: " + response);
+            		
+            		if(response.contains("404"))
+            		{
+            			logErr("Level code: " + msg_array[1] + " returned 404 error from Get Request on !forceadd");
+            		}
+	            	
+            		String sendTo = sender;
+            		if(msg_array.length == 2){
+            			sendTo = msg_array[2];
+            		}
+            		
+	            	twitch_user.setLastSubmit(new Date().getTime());
+	            	SMMHandler.addLevel(sendTo, msg_array[1], response);
+	            	if(g_forms_use)
+	    			{
+	    				SMMHandler.sendPost(g_forms_url, false, msg_array[1], sendTo);
+	    			}
+	            	sendResponse(sendTo, ml_submit);
+	            	break;
 	            }
 	            
             }
@@ -827,11 +860,12 @@ public class TwitchAI extends PircBot
 
     		// optional default is GET
     		con.setRequestMethod("GET");
-
+    		
     		//add request header
     		con.setRequestProperty("User-Agent", "java");
-
+    		
     		int responseCode = con.getResponseCode();
+    		//System.out.println("ResponseCode: " + responseCode);
     		if(responseCode == 404){
     			return "404";
     		}

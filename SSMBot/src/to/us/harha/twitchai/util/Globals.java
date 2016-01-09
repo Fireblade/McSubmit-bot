@@ -37,6 +37,9 @@ public class Globals
 	public static String g_smm_url_list = "Not yet set";
 	public static String g_smm_url_list_streamer = "Not yet set";
 	public static String g_smm_url_list_completed = "Not yet set";
+	//v1.3.0
+	public static boolean g_smm_save_last_session_queue_list = true;
+	public static boolean g_smm_load_last_session_queue_list_on_start = true;
 	
 	//SMM String responses;
 	public static String ml_submit_with_no_level = "To add your level to the list, use !submit code.";
@@ -65,6 +68,9 @@ public class Globals
 	public static String ml_duplicate_submission = "That code is already in the queue in position {place}.";
 	public static String ml_streamer_submission_list = "I haven't set this list yet, I will add my levels here or at a url like: {streamer_list_url}";
 	public static String ml_current_title = "Current level title is: {title}, And is labled as {difficulty}.";
+	//v1.3.0
+	public static String ml_forceadd_with_no_level = "The syntax is !forceadd xxxx-xxxx-xxxx-xxxx username";
+	public static String ml_forceadd = "Successfully added the level under user {sender}";
 	public static String ml_ = "";
 	
 	
@@ -105,6 +111,8 @@ public class Globals
 	public static final String g_com_commands = "commands";
 	public static final String g_com_streamerlist = "mylist";
 	public static final String g_com_title = "title";
+	//v1.3.0
+	public static final String g_com_forceadd = "forceadd";
 	
 	//modified BOT vars
 	public static String g_dir;
